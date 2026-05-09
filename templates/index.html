@@ -38,15 +38,19 @@
             letter-spacing: -.04em;
             line-height: 1;
             color: #fff;
+            display: inline-flex;
+            align-items: flex-end;
+            gap: .2rem;
         }
-        .brand h1 span {
-            font-size: 1rem;
+        .brand h1 .by {
+            font-size: .75rem;
             font-weight: 400;
             color: #5a5570;
             font-family: 'Space Mono', monospace;
             letter-spacing: 0;
-            vertical-align: middle;
-            margin-left: .5rem;
+            line-height: 1;
+            padding-bottom: .65rem;
+            white-space: nowrap;
         }
         .brand p {
             margin-top: .5rem;
@@ -121,7 +125,7 @@
 <body>
 <div class="wrap">
     <div class="brand">
-        <h1>ShortURL <span>by firman</span></h1>
+        <h1>ShortURL<span class="by">by firman</span></h1>
         <p>Memendekkan tautan panjangmu dalam satu klik.</p>
     </div>
 
@@ -129,7 +133,7 @@
         <form action="/shorten" method="POST">
             <div class="row">
                 <input type="text" name="url" placeholder="https://tautan-panjangmu.com/..." value="{{ original_url or '' }}" required autofocus>
-                <button type="submit">Singkat →</button>
+                <button type="submit">Shorten URL →</button>
             </div>
         </form>
 
@@ -137,10 +141,10 @@
 
         {% if short_url %}
         <div class="result">
-            <div class="result-label">URL SINGKAT</div>
+            <div class="result-label">Shortened URL</div>
             <div class="result-row">
                 <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
-                <button class="copy-btn" onclick="cp('{{ short_url }}', this)">Salin</button>
+                <button class="copy-btn" onclick="cp('{{ short_url }}', this)">Copy</button>
             </div>
             {% if original_url %}<div class="orig">↳ {{ original_url }}</div>{% endif %}
         </div>
