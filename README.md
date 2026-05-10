@@ -2,8 +2,6 @@
 
 Aplikasi web pemendek URL berbasis Flask yang di-deploy ke Railway (PaaS).
 
-Dibuat untuk Tugas Mandiri Mata Kuliah **Komputasi Awan (BBK3CAB3)**  
-Program Studi S1 Sistem Informasi — Universitas Telkom
 
 ---
 
@@ -57,27 +55,6 @@ Buka di browser: http://localhost:5000
 
 ## Deploy ke Railway
 
-```bash
-# 1. Login Railway
-railway login
+Buka di : https://url-shortener-firman.up.railway.app/
 
-# 2. Buat project baru
-railway new
 
-# 3. Tambah PostgreSQL add-on di dashboard Railway
-# Salin DATABASE_URL ke environment variable
-
-# 4. Deploy
-railway up
-```
-
-Railway otomatis mendeteksi `Procfile` dan menjalankan `gunicorn app:app`.
-
----
-
-## Variabel Lingkungan
-
-| Variable | Keterangan |
-|---|---|
-| `DATABASE_URL` | URL koneksi PostgreSQL dari Railway |
-| `PORT` | Port server (otomatis diisi Railway) |
